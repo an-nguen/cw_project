@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Book } from 'src/app/models/book';
@@ -26,5 +26,18 @@ export class BookService {
 
   public removeBook(id: string): Observable<void> {
     return this._http.delete<void>(this.BASE_URL + '/' + id);
+  }
+
+  public uploadBook(id: string, file: File): Observable<unknown> {
+    const formData = new FormData();
+    formData.set('file', file);
+    return this._http.post<void>(`${this.BASE_URL}/upload/${id}`, formData);
+  }
+
+  public downloadBook(id: string): Observable<HttpResponse<Blob>> {
+    return this._http.get(`${this.BASE_URL}/download/${id}`, {
+      observe: 'response',
+      responseType: 'blob',
+    });
   }
 }

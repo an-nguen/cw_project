@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>
+  <span *ngIf="!dialogData.author; else editTitle">Создание записи</span>
+  <ng-template #editTitle>Изменение записи</ng-template>
+</h2>
+<form mat-dialog-content class="editForm" [formGroup]="authorForm">
+  <mat-form-field>
+    <mat-label> Фамилия </mat-label>
+    <input matInput formControlName="lastName" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label> Имя </mat-label> <input matInput formControlName="firstName" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label> Отчество </mat-label>
+    <input matInput formControlName="midName" />
+  </mat-form-field>
+</form>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onEdit()"
+    [disabled]="!authorForm.valid"
+  >
+    <mat-icon *ngIf="!dialogData.author; else editBtnIcon">add</mat-icon>
+    <ng-template #editBtnIcon><mat-icon>edit</mat-icon></ng-template>
+    <span *ngIf="!dialogData.author; else editBtnTitle"> Создать </span>
+    <ng-template #editBtnTitle>Изменить</ng-template>
+  </button>
+  <button mat-raised-button color="warn" (click)="onClose()">Закрыть</button>
+</div>

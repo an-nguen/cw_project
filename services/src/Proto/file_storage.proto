@@ -2,12 +2,15 @@ syntax = "proto3";
 
 import "common.proto";
 
+import "google/protobuf/empty.proto";
+
 package fss;
 
 service FileStorageService {
     rpc HasFile(common.HasFileRequest) returns (common.HasFileReply);
     rpc Upload(stream FileChunkMessage) returns (UploadReply);
     rpc Download(DownloadRequest) returns (stream FileChunkMessage);
+    rpc DeleteEntry(DeleteEntryRequest) returns (google.protobuf.Empty);
 }
 
 message FileChunkMessage {
@@ -24,5 +27,9 @@ message UploadReply {
 }
 
 message DownloadRequest {
+    string uuid = 1;
+}
+
+message DeleteEntryRequest {
     string uuid = 1;
 }

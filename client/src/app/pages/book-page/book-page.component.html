@@ -1,5 +1,14 @@
+<h2>Список книг</h2>
+<div class="add-button-container">
+  <button mat-raised-button color="primary" (click)="onAdd()">
+    <mat-icon>add</mat-icon>
+    <span>Добавить</span>
+  </button>
+</div>
 <app-book-list
-  [books]="books"
+  [dataSource]="dataSource"
+  (download)="onDownload($event)"
+  (upload)="onUpload($event)"
   (edit)="onEdit($event)"
   (delete)="onDelete($event)"
 ></app-book-list>

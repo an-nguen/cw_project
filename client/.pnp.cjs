@@ -46,11 +46,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@angular/platform-browser", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:16.1.0"],\
             ["@angular/platform-browser-dynamic", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:16.1.0"],\
             ["@angular/router", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:16.1.0"],\
+            ["@types/file-saver", "npm:2.0.5"],\
             ["@types/jasmine", "npm:4.3.2"],\
             ["@typescript-eslint/eslint-plugin", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:5.59.7"],\
             ["@typescript-eslint/parser", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:5.59.7"],\
             ["eslint", "npm:8.42.0"],\
             ["eslint-config-prettier", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:8.8.0"],\
+            ["file-saver", "npm:2.0.5"],\
             ["jasmine-core", "npm:4.6.0"],\
             ["karma", "npm:6.4.2"],\
             ["karma-chrome-launcher", "npm:3.2.0"],\
@@ -5065,6 +5067,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/file-saver", [\
+        ["npm:2.0.5", {\
+          "packageLocation": "./.yarn/cache/@types-file-saver-npm-2.0.5-b1e5b3252c-a31d6ee2ab.zip/node_modules/@types/file-saver/",\
+          "packageDependencies": [\
+            ["@types/file-saver", "npm:2.0.5"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["@types/http-proxy", [\
         ["npm:1.17.11", {\
           "packageLocation": "./.yarn/cache/@types-http-proxy-npm-1.17.11-55ebe38928-38ef4f8c91.zip/node_modules/@types/http-proxy/",\
@@ -6644,11 +6655,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@angular/platform-browser", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:16.1.0"],\
             ["@angular/platform-browser-dynamic", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:16.1.0"],\
             ["@angular/router", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:16.1.0"],\
+            ["@types/file-saver", "npm:2.0.5"],\
             ["@types/jasmine", "npm:4.3.2"],\
             ["@typescript-eslint/eslint-plugin", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:5.59.7"],\
             ["@typescript-eslint/parser", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:5.59.7"],\
             ["eslint", "npm:8.42.0"],\
             ["eslint-config-prettier", "virtual:67bccc7d0bcfa1230f52b04f252953235f3247e8df364142a4b7724e7369b822323dc3148cf3825512a8c0b70e04e7501cbd67f5ac8193999d7bc7a9f219cccb#npm:8.8.0"],\
+            ["file-saver", "npm:2.0.5"],\
             ["jasmine-core", "npm:4.6.0"],\
             ["karma", "npm:6.4.2"],\
             ["karma-chrome-launcher", "npm:3.2.0"],\
@@ -8085,6 +8098,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["file-entry-cache", "npm:6.0.1"],\
             ["flat-cache", "npm:3.0.4"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["file-saver", [\
+        ["npm:2.0.5", {\
+          "packageLocation": "./.yarn/cache/file-saver-npm-2.0.5-2c3bc40d53-c62d96e5ce.zip/node_modules/file-saver/",\
+          "packageDependencies": [\
+            ["file-saver", "npm:2.0.5"]\
           ],\
           "linkType": "HARD"\
         }]\

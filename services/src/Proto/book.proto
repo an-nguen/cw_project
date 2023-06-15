@@ -53,5 +53,6 @@ message BookReply {
     string title = 2;
     string isbn = 3;
     repeated author.AuthorMessage authors = 4;
+    bool hasFile = 5;
 }
 

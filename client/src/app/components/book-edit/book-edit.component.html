@@ -1,1 +1,65 @@
-<p>book-edit works!</p>
+<h2 mat-dialog-title>
+  <span *ngIf="!dialogData.book; else editTitle">Создание записи</span>
+  <ng-template #editTitle>Изменение записи</ng-template>
+</h2>
+<form mat-dialog-content class="editForm" [formGroup]="bookForm">
+  <mat-form-field>
+    <mat-label> Название книги </mat-label>
+    <input matInput formControlName="title" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label> ISBN </mat-label> <input matInput formControlName="isbn" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label> Авторы </mat-label>
+
+    <mat-chip-grid #chipGrid>
+      <mat-chip-row
+        *ngFor="let author of selectedOptions"
+        (removed)="removeAuthor(author)"
+      >
+        {{ displayFn(author) }}
+        <button matChipRemove>
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip-row>
+    </mat-chip-grid>
+
+    <input
+      matInput
+      formControlName="authors"
+      #authorInput
+      [formControl]="authorsFormCtrl"
+      [matChipInputFor]="chipGrid"
+      [matAutocomplete]="auto"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="addAuthor($event)"
+    />
+
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      (optionSelected)="selectedAuthor($event)"
+    >
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
+        {{ displayFn(option) }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onEdit()"
+    [disabled]="!bookForm.valid"
+  >
+    <mat-icon *ngIf="!dialogData.book; else editBtnIcon">add</mat-icon>
+    <ng-template #editBtnIcon><mat-icon>edit</mat-icon></ng-template>
+    <span *ngIf="!dialogData.book; else editBtnTitle"> Создать </span>
+    <ng-template #editBtnTitle>Изменить</ng-template>
+  </button>
+  <button mat-raised-button color="warn" (click)="onClose()">Закрыть</button>
+</div>

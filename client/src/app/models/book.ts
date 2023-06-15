@@ -1,8 +1,10 @@
-import { Author } from './author'
+import { Author } from './author';
 
 export interface Book {
-  id?: string
-  title: string
-  isbn: string
-  authors: Array<Author> | Array<string>
+  id?: string;
+  title: string;
+  isbn: string;
+  authorIds?: Array<string>;
+  authors?: Array<Author>;
+  hasFile?: boolean;
 }

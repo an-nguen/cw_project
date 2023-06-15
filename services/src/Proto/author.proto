@@ -10,6 +10,10 @@ service AuthorService {
     rpc AddAuthor(AuthorAddRequest) returns (AuthorMessage);
     rpc UpdateAuthor(AuthorMessage) returns (AuthorMessage);
     rpc RemoveAuthor(common.RemoveRequest) returns (google.protobuf.Empty);
+    rpc SayHello (stream HelloRequest) returns (HelloReply);
+    rpc SayHello (HelloRequest) returns (stream HelloReply);
+    rpc SayHello (stream HelloRequest) returns (stream HelloReply);
+
 }
 
 message AuthorAddRequest {

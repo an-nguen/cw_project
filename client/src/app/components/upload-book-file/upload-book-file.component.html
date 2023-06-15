@@ -1,0 +1,30 @@
+<h2 mat-dialog-title>Загрузить файл</h2>
+<div mat-dialog-content>
+  <mat-form-field>
+    <mat-toolbar>
+      <input matInput [value]="fileName" readonly />
+    </mat-toolbar>
+
+    <input
+      type="file"
+      id="fileInput"
+      (change)="selectFile($event)"
+      name="fileInput"
+    />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onUploadClick()"
+    [disabled]="!currentFile"
+  >
+    <mat-icon>upload</mat-icon>
+    <span>Загрузить</span>
+  </button>
+  <button mat-raised-button color="warn" (click)="onCloseClick()">
+    <mat-icon>close</mat-icon>
+    <span>Закрыть</span>
+  </button>
+</div>
