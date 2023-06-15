@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package common;
+
+message RemoveRequest {
+    string id = 1;
+}
+
+message HasFileRequest {
+    string id = 1;
+}
+
+message HasFileReply {
+    bool file = 1;
+}

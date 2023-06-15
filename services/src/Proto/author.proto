@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "common.proto";
+
+package author;
+
+service AuthorService {
+    rpc GetAuthors(google.protobuf.Empty) returns (stream AuthorMessage);
+    rpc AddAuthor(AuthorAddRequest) returns (AuthorMessage);
+    rpc UpdateAuthor(AuthorMessage) returns (AuthorMessage);
+    rpc RemoveAuthor(common.RemoveRequest) returns (google.protobuf.Empty);
+}
+
+message AuthorAddRequest {
+    string lastName = 1;
+    string firstName = 2;
+    string midName = 3;
+}
+
+message AuthorMessage {
+    string id = 1;
+    string lastName = 2;
+    string firstName = 3;
+    string midName = 4;
+}

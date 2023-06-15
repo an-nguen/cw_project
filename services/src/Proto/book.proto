@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+import "common.proto";
+import "author.proto";
+import "file_storage.proto";
+
+import "google/protobuf/empty.proto";
+
+package books;
+
+service BookService {
+    rpc GetBooks(google.protobuf.Empty) returns (stream BookReply);
+    rpc AddBook(BookAddRequest) returns (BookReply);
+    rpc UpdateBook(BookUpdateRequest) returns (BookReply);
+    rpc RemoveBook(common.RemoveRequest) returns (google.protobuf.Empty);
+    rpc HasFile(common.HasFileRequest) returns (common.HasFileReply);
+    rpc UploadBookFile(stream UploadBookFileChunkRequest) returns (google.protobuf.Empty);
+    rpc DownloadBookFile(DownloadBookFileRequest) returns (stream fss.FileChunkMessage);
+}
+
+message BookAddRequest {
+    string title = 1;
+    string isbn = 2;
+    repeated string authorIds = 3;
+}
+
+message BookUpdateRequest {
+    string id = 1;
+    string title = 2;
+    string isbn = 3;
+    repeated string authorIds = 4;
+}
+
+message BookRemoveRequest {
+    string id = 1;
+}
+
+
+message UploadBookFileChunkRequest {
+    string id = 1;
+    string filename = 2;
+    int32 chunkSize = 3;
+    int32 fileSize = 4;
+    bytes chunk = 5;
+}
+
+message DownloadBookFileRequest {
+    string id = 1;
+}
+
+message BookReply {
+    string id = 1;
+    string title = 2;
+    string isbn = 3;
+    repeated author.AuthorMessage authors = 4;
+}
+

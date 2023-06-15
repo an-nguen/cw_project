@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+import "common.proto";
+
+package fss;
+
+service FileStorageService {
+    rpc HasFile(common.HasFileRequest) returns (common.HasFileReply);
+    rpc Upload(stream FileChunkMessage) returns (UploadReply);
+    rpc Download(DownloadRequest) returns (stream FileChunkMessage);
+}
+
+message FileChunkMessage {
+    int32 chunkSize = 1;
+    // Total size of the file
+    int32 fileSize = 2;
+    string fileName = 3;
+    bytes chunk = 4;
+}
+
+message UploadReply {
+    bool success = 1;
+    string uuid = 2;
+}
+
+message DownloadRequest {
+    string uuid = 1;
+}

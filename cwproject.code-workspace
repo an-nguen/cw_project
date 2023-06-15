@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "services"
+		},
+		{
+			"path": "client"
+		}
+	],
+	"settings": {
+		"typescript.tsdk": "client\\.yarn\\sdks\\typescript\\lib",
+		"typescript.enablePromptUseWorkspaceTsdk": true
+	}
+}
